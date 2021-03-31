@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
             integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+
+
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     </head>
 
     <body>
@@ -31,12 +34,11 @@
                     <!-- mr-auto makes everythign to the right -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mx-4">
-                            <a href="/" class="nav-link active">Home</a>
+                            <a href="#" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a href="map.html" class="nav-link">Map</a>
+                            <a href="{{url_for('map')}}" class="nav-link">Map</a>
                         </li>
-                        <li class="nav-item"></li>
                     </ul>
                 </div>
             </nav>
@@ -44,38 +46,39 @@
                 <!-- Using JS for typewriting -->
                 <h1>I am Michael, <span class="txt-type" data-weight="4000"
                         data-words='["Engineer To Be ","Software Developer ","Investor "]''></span></h1>
-                      <div class="bottom-line"></div>
-                      <p class="lead text-white">Engineering Student | Day Trader | Software Developer</p>
-      
-                  </div>
-              </header>
+        <div class="bottom-line"></div>
+        <p class="lead text-white">Engineering Student | Day Trader | Software Developer</p>
 
-              <section id="About-section">
+    </div>
+</header>
 
-                <div class="container text-white">
-                    <div class="about">
-                        <h1 class="text-white">About me</h1>
 
-                        <div class="row mx-auto con">
-                            <div class="col first-column portrait">
-                                <img src="{{url_for(' static', filename='about.jpg' )}}" alt="">
+<section id="About-section">
+
+    <div class="container text-white">
+        <div class="about">
+            <h1 class="text-white">About me</h1>
+
+            <div class="row mx-auto con">
+                <div class="col first-column portrait">
+                    <img src="/static/img/about.jpg" alt="">
             </div>
             <div class="col second-column">
                 <p>
-                    Hello there! I' m Michael Ah and I'd like to thank you for browsing my website. If you
-                    don't know me, I am a passionate 4th Geomatics Engineering student studying at the University of
-                    Calgary. </p>
+                    Hello there! I' m Michael Ah and I'd like to thank you for browsing my website. If you don't know
+                        me, I am a passionate 4th Geomatics Engineering student studying at the University of Calgary.
+                        </p>
 
-                <p>
-                    My hobbies consist of coding, hiking and watching/playing soccer.
-                </p>
+                        <p>
+                            My hobbies consist of coding, hiking and watching/playing soccer.
+                        </p>
 
-                <p> I registered in the department of Geomatics Engineering because of my interest in lidar
-                    data, GNSS (Global Navigation Satelite Systems) positioning and autonomous driving. In the
-                    future I would like to get involved in autonomy and deep learning.
+                        <p> I registered in the department of Geomatics Engineering because of my interest in lidar
+                            data, GNSS (Global Navigation Satelite Systems) positioning and autonomous driving. In the
+                            future I would like to get involved in autonomy and deep learning.
 
-                    I have previous work experience working for Hexagon Autonomy & positioning as an R&D
-                    Engineering Intern. </p>
+                            I have previous work experience working for Hexagon Autonomy & positioning as an R&D
+                            Engineering Intern. </p>
             </div>
             </div>
 
@@ -101,7 +104,7 @@
                         </div>
 
                         <div class="col first-column portrait">
-                            <img src="img/project.png" alt="">
+                            <img src="static/img/project.png" alt="">
                         </div>
                     </div>
 
@@ -111,12 +114,11 @@
             </section>
 
 
-
-            <footer id="main-footer" class="bg-dark text-white">
-                <div class="footer-container container">
-                    <p class="my-auto py-auto">Copyright &copy; 2020 Michael Ah. Written in HTML5 CSS3 & JS</p>
-                </div>
-            </footer>
+            <!-- <footer id="main-footer" class="bg-dark text-white">
+<div class="footer-container container">
+<p class="my-auto py-auto">Copyright &copy; 2020 Michael Ah. Written in HTML5 CSS3 & JS</p>
+</div>
+</footer> -->
     </body>
 
 </html>
