@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }).setView([51.0447, -114.07], 11);
 
     // 2.Get Data & Display it (Note getting it from backend)
-    buildMarkerLayer("/cameradata", CameraMarkers, TrafficLightsIcon);
-    buildMarkerLayer("/incidentdata", IncidentMarkers, IncidentIcon);
-    buildLineLayer("/speeddata", mymap);
+    buildMarkerLayer("/api/cameradata", CameraMarkers, TrafficLightsIcon);
+    buildMarkerLayer("/api/incidentdata", IncidentMarkers, IncidentIcon);
+    buildLineLayer("/api/speeddata", mymap);
 
     //3. Adding Control Layer tool to map
     L.control.layers(basemaps, layers, { collapsed: false }).addTo(mymap); // Layer Selecetion Panel

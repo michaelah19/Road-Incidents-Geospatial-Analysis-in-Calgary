@@ -44,7 +44,7 @@ const options = {
     draw: {
         polyline: {
             shapeOptions: {
-                color: "#f357a1",
+                color: "#000080",
                 weight: 10,
             },
             showLength: false,

@@ -74,7 +74,7 @@ function buildLineLayer(link, mymap) {
                     .addTo(SpeedLayer);
         });
 
-    fetch("/speedcolor")
+    fetch("/api/speedcolor")
         .then((returnObj) => returnObj.json())
         .then((data) => {
             tempcolor = data;

@@ -23,17 +23,17 @@ def map():
 # NOte that the only reason this is done through the backend is to satisfy academic requirements.
 # Otherwise everything could be done on the front end.
 
-@app.route("/cameradata", methods=["GET"])
+@app.route("/api/cameradata", methods=["GET"])
 def cameradata():
     r = requests.get("https://data.calgary.ca/resource/k7p9-kppz.geojson")
     return r.json()
 
-@app.route("/incidentdata", methods=["GET"])
+@app.route("/api/incidentdata", methods=["GET"])
 def incidentdata():
     r = requests.get("https://data.calgary.ca/resource/35ra-9556.geojson")
     return r.json()
 
-@app.route('/speeddata', methods=['get'])
+@app.route('/api/speeddata', methods=['get'])
 def speeddata():
     r=requests.get("https://data.calgary.ca/resource/2bwu-t32v.geojson")
     rawdata = r.json()
@@ -55,7 +55,7 @@ def speeddata():
         row['properties']['color'] = colorcode[int(row['properties']['speed'])]
     return featuredata
     
-@app.route('/speedcolor', methods=['get'])
+@app.route('/api/speedcolor', methods=['get'])
 def speedcolor():
     return colorcode
     
