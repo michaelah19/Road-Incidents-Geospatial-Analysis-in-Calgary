@@ -22,8 +22,6 @@
     </head>
 
     <body>
-
-
         <header id='header-home'>
             <!-- Nav Bar -->
             <!-- Note that this container restrains the width of EVERYTING inside to a maximum width, It's called WIDTH CONTAINER-->
@@ -46,45 +44,43 @@
                 <!-- Using JS for typewriting -->
                 <h1>I am Michael, <span class="txt-type" data-weight="4000"
                         data-words='["Engineer To Be ","Software Developer ","Investor "]''></span></h1>
-        <div class="bottom-line"></div>
-        <p class="lead text-white">Engineering Student | Day Trader | Software Developer</p>
+                <div class="bottom-line"></div>
+                <p class="lead text-white">Engineering Student | Day Trader | Software Developer</p>
+             </div>
+        </header>
 
-    </div>
-</header>
 
+        <section id="About-section">
+            <!-- First Row of About Section -->
+            <div class="container text-white">
+                <div class="about">
+                    <h1 class="text-white">About me</h1>
 
-<section id="About-section">
+                    <div class="row mx-auto con">
+                        <div class="col first-column portrait">
+                            <img src="/static/img/about.jpg" alt="">
+                        </div>
+                        <div class="col second-column">
+                            <p class="h4">
+                                Hello there! I' m Michaasdel Ah and I'd like to thank you for browsing my website. If you don't
+                                    know me, I am a passionate 4th Geomatics Engineering student studying at the University of
+                                    Calgary. </p>
 
-    <div class="container text-white">
-        <div class="about">
-            <h1 class="text-white">About me</h1>
+                            <br>
+                            <p class="h4"> I registered in the department of Geomatics Engineering because of my interest in
+                                        lidar
+                                        data, GNSS (Global Navigation Satelite Systems) positioning and autonomous driving. In the
+                                        future I would like to get involved in autonomy and deep learning.
 
-            <div class="row mx-auto con">
-                <div class="col first-column portrait">
-                    <img src="/static/img/about.jpg" alt="">
+                                        I have previous work experience working for Hexagon Autonomy & positioning as an R&D
+                                        Engineering Intern. 
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col second-column">
-                <p>
-                    Hello there! I' m Michael Ah and I'd like to thank you for browsing my website. If you don't know
-                        me, I am a passionate 4th Geomatics Engineering student studying at the University of Calgary.
-                        </p>
-
-                        <p>
-                            My hobbies consist of coding, hiking and watching/playing soccer.
-                        </p>
-
-                        <p> I registered in the department of Geomatics Engineering because of my interest in lidar
-                            data, GNSS (Global Navigation Satelite Systems) positioning and autonomous driving. In the
-                            future I would like to get involved in autonomy and deep learning.
-
-                            I have previous work experience working for Hexagon Autonomy & positioning as an R&D
-                            Engineering Intern. </p>
-            </div>
-            </div>
-
-            </div>
-            </div>
-
+            <!-- 2nd Row of About section -->
             <div class="container text-white">
                 <div class="about">
                     <h1 class="text-white">Project Detail</h1>
@@ -92,14 +88,24 @@
                     <div class="row mx-auto con">
 
                         <div class="col second-column">
-                            <p>
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum
+                            <p class="h4">
+                                THe objective of the final project of ENGO 551: Advanced Geospatial Analysis was to
+                                apply the skills and knowledge gain over the semester to solve a problem.
+                            </p>
+                            <br>
+                            <p class="h4">
+                                My project consists of showing Road incidents in Calgary since 2016. According to
+                                Alberta Statistics, In 2018, there were 142,596 collisions with 246 of them being fatal.
+                                I thought it'd be interesting to model some of the different datasets and see if there's
+                                correlation between location of traffic cameras and the speed limits.
+
+                                The data was colelcted from openData Calgary, the backend was made using Flask (python
+                                library) and the front end was generated using vanilla javascript (Leaflet, Leafetdraw
+                                and other external Libraries). There were 2 geospatial techniques applied using turf
+                                which are Euclidian Distance along a road and Finding Nearest neighbour (from the
+                                traffic camera cluster).
+                                The data was
+                                collected from OpenData Calgary.
                             </p>
                         </div>
 
@@ -111,14 +117,15 @@
                 </div>
             </div>
 
-            </section>
 
+        </section>
 
-            <!-- <footer id="main-footer" class="bg-dark text-white">
-<div class="footer-container container">
-<p class="my-auto py-auto">Copyright &copy; 2020 Michael Ah. Written in HTML5 CSS3 & JS</p>
-</div>
-</footer> -->
+        <!-- Footer -->
+        <footer id="main-footer" class="bg-dark text-white">
+            <div class="footer-container container">
+                <p class="my-auto py-auto">Copyright &copy; 2020 Michael Ah. Written in HTML5 CSS3 & JS</p>
+            </div>
+        </footer>
     </body>
 
 </html>

@@ -9,7 +9,7 @@ const IncidentMarkers = L.markerClusterGroup({ singleMarkerMode: true });
 const CameraMarkers = L.featureGroup();
 // This layer is used by user to draw and edit.
 const drawLayer = new L.FeatureGroup();
-
+let distance = 0;
 // Icons for features on map
 const BaseIcon = L.Icon.extend({});
 //(Note those are deriver classed from base icon)
@@ -35,6 +35,7 @@ const layers = {
     // "speedlimit": SpeedLayer,
     "Traffic Accidents": IncidentMarkers,
     "Traffic Cameras": CameraMarkers,
+    "Speed Layer": SpeedLayer,
 };
 
 //Initializing Drawing layer and Drawing Options
@@ -46,26 +47,20 @@ const options = {
                 color: "#f357a1",
                 weight: 10,
             },
+            showLength: false,
+            repeatMode: false,
         },
         polygon: false,
         circle: false,
         marker: false,
         rectangle: false,
-        polygon: {
-            allowIntersection: false, // Restricts shapes to simple polygons
-            drawError: {
-                color: "#e1e100", // Color the shape will turn when intersects
-                message: "<strong>Oh snap!<strong> you can't draw that!", // Message that will show when intersect
-            },
-            shapeOptions: {
-                color: "#bada55",
-            },
-        },
+        polygon: false,
         circle: false, // Turns off this drawing tool
         circlemarker: false,
     },
     edit: {
         featureGroup: drawLayer,
+        edit: false,
         remove: true,
     },
 };
@@ -73,4 +68,9 @@ const options = {
 // Creating Drawing toolbox (on the right side using Options above)
 var drawControl = new L.Control.Draw(options);
 
+// Boolean to enable download or not.
 let DownloadButton = false;
+
+// Legend toolbox and variable to contain color hex.
+let tempcolor;
+var legend = L.control({ position: "bottomleft" });

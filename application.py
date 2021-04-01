@@ -5,7 +5,6 @@ from flask_session import Session
 import requests
 
 app = Flask(__name__)
-Session(app)
 
 # Home Page
 @app.route("/", methods=["GET", "POST"])
@@ -13,53 +12,52 @@ def index():
     if request.method == "POST":
         return render_template("map.html")
     else:
-        # print("Get Method")
-        # return render_template("map.html")
         return render_template("index.html")
 
-@app.route("/map", methods=["GET", "POST"])
+@app.route("/map", methods=["GET"])
 def map():
-    if request.method == "POST":
-        return render_template("map.html")
-    else:
         # Get Method
         return render_template("map.html")
 
-@app.route("/cameradata", methods=["GET", "POST"])
+# Next are API endpoints for the front end to obtain data.
+# NOte that the only reason this is done through the backend is to satisfy academic requirements.
+# Otherwise everything could be done on the front end.
+
+@app.route("/cameradata", methods=["GET"])
 def cameradata():
     r = requests.get("https://data.calgary.ca/resource/k7p9-kppz.geojson")
     return r.json()
 
-@app.route("/incidentdata", methods=["GET", "POST"])
+@app.route("/incidentdata", methods=["GET"])
 def incidentdata():
     r = requests.get("https://data.calgary.ca/resource/35ra-9556.geojson")
     return r.json()
 
+@app.route('/speeddata', methods=['get'])
+def speeddata():
+    r=requests.get("https://data.calgary.ca/resource/2bwu-t32v.geojson")
+    rawdata = r.json()
+
+    featuredata = rawdata
+    vecSpeedLimits=[]
+
+    for row in featuredata['features']:
+        vecSpeedLimits.append(int(row['properties']['speed']))
+    vecSpeedLimits = set(vecSpeedLimits)
+
+    # Saving A color in each one of them
+    import random
+    global colorcode
+    colorcode = {element:"#" + "%06x" % random.randint(0, 0xFFFFFF) for element in vecSpeedLimits}    
+
+    #Adding Color to data then sending it front end
+    for row in featuredata['features']:
+        row['properties']['color'] = colorcode[int(row['properties']['speed'])]
+    return featuredata
+    
+@app.route('/speedcolor', methods=['get'])
+def speedcolor():
+    return colorcode
+    
 if __name__== "__main__":
     app.run(debug=True, threaded= True)
-# @ app.route("/createaccount", methods=["GET", "POST"])
-# def create():
-#     global df
-#     if request.method == "POST":
-#         name = request.form.get("Username")
-#         password = request.form.get("Password")
-#         temp = pd.DataFrame({"name": [name],
-#                              "password": [password]})
-#         df = df.append([temp])
-#         return render_template("index.html")
-
-#     else:
-#         return render_template('createaccount.html')
-
-# Map Page
-# @ app.route("/main", methods=["GET", "POST"])
-# def main():
-#     # When Form is submitted, data is saved
-#     # Syntax is PythonVar = request.form.get("Input class NAME (from HTML)")
-#     if request.method == "POST":
-#         ISBN = request.form.get("ISBN")
-#         # This is used to move to the next page after you press submit (otherwise it's just gonna return the same thing)
-#         return redirect(url_for('search', ISBN=ISBN))
-#     else:
-#         # For GET request (i.e. when page loads)
-#         return render_template("page1.html", data1="asd")
