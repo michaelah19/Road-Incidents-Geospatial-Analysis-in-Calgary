@@ -59,21 +59,21 @@ function buildLineLayer(link, mymap) {
             // Once Data is jsonify, log it then add it to control layer
             console.log(data);
 
-            temp =
-                //Saving IN GeoJson and Saving as Marker
-                L.geoJSON(data, {
-                    style: function (feature) {
-                        return {
-                            color: getColor(feature.properties.speed),
-                        }; //color: feature.properties.color };
-                    },
+            temp = L.geoJSON(data, {
+                style: function (feature) {
+                    return {
+                        color: getColor(feature.properties.speed),
+                    }; //color: feature.properties.color };
+                },
+            })
+                .bindPopup(function (feature) {
+                    return feature.feature.properties.description;
                 })
-                    .bindPopup(function (feature) {
-                        return feature.feature.properties.description;
-                    })
-                    .addTo(SpeedLayer);
+                .addTo(SpeedLayer);
         });
+}
 
+function buildlegendlayer() {
     fetch("/api/speedcolor")
         .then((returnObj) => returnObj.json())
         .then((data) => {

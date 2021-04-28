@@ -35,17 +35,18 @@ def incidentdata():
 
 @app.route('/api/speeddata', methods=['get'])
 def speeddata():
+    # Grabbign Data
     r=requests.get("https://data.calgary.ca/resource/2bwu-t32v.geojson")
     rawdata = r.json()
 
     featuredata = rawdata
     vecSpeedLimits=[]
-
+    # Grouping the different polylines by Speed Limit
     for row in featuredata['features']:
         vecSpeedLimits.append(int(row['properties']['speed']))
     vecSpeedLimits = set(vecSpeedLimits)
 
-    # Saving A color in each one of them
+    # Assigning a unique random color to each groups
     import random
     global colorcode
     colorcode = {element:"#" + "%06x" % random.randint(0, 0xFFFFFF) for element in vecSpeedLimits}    
