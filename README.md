@@ -1,6 +1,5 @@
 # Road-Incidents-Geospatial-Analysis-in-Calgary
-Visit https://micdean19.pythonanywhere.com/ 
-Mapping Web App showing Traffic incidents and Traffic Cameras in Calgary.
+Visit https://micdean19.pythonanywhere.com/
 
 ## Introduction
 The objective of the final project of ENGO 551: Advanced Geospatial Analysis was to apply the skills and knowledge gained over the semester to solve a geospatial problem.
