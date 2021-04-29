@@ -1,5 +1,8 @@
 # Road-Incidents-Geospatial-Analysis-in-Calgary
-Visit https://micdean19.pythonanywhere.com/
+The web app is hosted by PythonAnywhere and is available at https://micdean19.pythonanywhere.com/.
+
+Note that due to the limitation of the free hosting tier of Python Anywhere, some of the images won't show due to being too large (i.e. traffic cameras images).
+If you'd like to see those feel free to pull the repository and open the app with python/flask by running "flask run" in the directory.
 
 ## Introduction
 The objective of the final project of ENGO 551: Advanced Geospatial Analysis was to apply the skills and knowledge gained over the semester to solve a geospatial problem.
