@@ -73,7 +73,7 @@ function buildLineLayer(link, mymap) {
         });
 }
 
-function buildlegendlayer() {
+function buildlegendlayer(mymap) {
     fetch("/api/speedcolor")
         .then((returnObj) => returnObj.json())
         .then((data) => {

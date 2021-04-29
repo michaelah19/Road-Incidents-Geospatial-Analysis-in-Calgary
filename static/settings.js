@@ -2,11 +2,7 @@
 // Basically things are constructed here.
 
 // Initializing Maps and Data
-// 1.Creating Map
-const mymap = L.map("mapid", {
-    zoom: 11,
-    layers: [darkgreyBase, drawLayer],
-}).setView([51.0447, -114.07], 11);
+
 const CommunityMarkers = L.featureGroup();
 const ClosestLight = L.layerGroup();
 const SpeedLayer = L.layerGroup();
