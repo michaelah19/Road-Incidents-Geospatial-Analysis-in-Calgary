@@ -5,7 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Geospatial Analysis of Traffic Incidents in Calgary Home Page</title>
+        <meta property="og:image" content="https://micdean19.pythonanywhere.com/static/img/project.png" />
+
+        <meta property="og:description" content="My project consists of showing Road incidents in Calgary since 2016. According to Alberta Statistics, in 2018, there were 142,596 collisions with 246 of them being fatal. I thought it'd be interesting to model some of the different datasets and see if there's correlation between location of traffic cameras and the speed limits. The data was collected from open Data Calgary, the backend was made using Flask (python library) and the front end was generated using vanilla JavaScript (Leaflet, Leaflet draw and other external Libraries). There were 2 geospatial techniques applied using turf which are Euclidian Distance along a road and Finding Nearest neighbour (from the traffic camera cluster). The data was collected from Open Data Calgary." />
 
         <!-- Importing Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,7 +31,7 @@
             <!-- Navigation Bootstrap -->
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 <div class="container">
-                    <h1 class="navbar-brand my-auto">Advanced Geospatial Final Project</h1>
+                    <h1 class="navbar-brand my-auto">Geospatial Analysis of Traffic Incidents in Calgary</h1>
                     <!-- mr-auto makes everythign to the right -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mx-4">
@@ -62,9 +65,8 @@
                         </div>
                         <div class="col second-column">
                             <p class="h4">
-                                Hello there! I' m Michaasdel Ah and I'd like to thank you for browsing my website. If you don't
-                                    know me, I am a passionate 4th Geomatics Engineering student studying at the University of
-                                    Calgary. </p>
+                                Hello there! I' m Michael Ah and I'd like to thank you for browsing my web application. If you don't
+                                    know me, I am a passionate Geomatics Engineering student and a Software Developer who is passionate about making this world a better place. </p>
 
                             <br>
                             <p class="h4"> I registered in the department of Geomatics Engineering because of my interest in
@@ -73,7 +75,7 @@
                                         future I would like to get involved in autonomy and deep learning.
 
                                         I have previous work experience working for Hexagon Autonomy & positioning as an R&D
-                                        Engineering Intern. 
+                                        Engineering Intern.
                             </p>
                         </div>
                     </div>
@@ -89,11 +91,6 @@
 
                         <div class="col second-column">
                             <p class="h4">
-                                THe objective of the final project of ENGO 551: Advanced Geospatial Analysis was to
-                                apply the skills and knowledge gain over the semester to solve a problem.
-                            </p>
-                            <br>
-                            <p class="h4">
                                 My project consists of showing Road incidents in Calgary since 2016. According to
                                 Alberta Statistics, In 2018, there were 142,596 collisions with 246 of them being fatal.
                                 I thought it'd be interesting to model some of the different datasets and see if there's
@@ -106,6 +103,9 @@
                                 traffic camera cluster).
                                 The data was
                                 collected from OpenData Calgary.
+                                <br> <br>
+                                Update: Unfortunately due to the restriction of PythonAnywhere, the image of the cameras won't show in the popups. This is because PythonAnywhere doesn't allow getrequests for large data sizes with their basic package.
+                                <br>
                             </p>
                         </div>
 
