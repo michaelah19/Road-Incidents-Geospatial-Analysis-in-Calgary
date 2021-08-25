@@ -5,9 +5,8 @@ Note that due to the limitation of the free hosting tier of Python Anywhere, som
 If you'd like to see those feel free to pull the repository and open the app with python/flask by running "flask run" in the directory.
 
 ## Introduction
-The objective of the final project of ENGO 551: Advanced Geospatial Analysis was to apply the skills and knowledge gained over the semester to solve a geospatial problem.
 
-My project consists of showing Road incidents in Calgary since 2016. According to Alberta Statistics, in 2018, there were 142,596 collisions with 246 of them being fatal. 
+This project consists of showing Road incidents in Calgary since 2016. According to Alberta Statistics, in 2018, there were 142,596 collisions with 246 of them being fatal. 
 I thought it'd be interesting to model some of the different datasets and see if there's correlation between location of traffic cameras and the speed limits. 
 The data was collected from open Data Calgary, the backend was made using Flask (python library) and the front end was generated using vanilla JavaScript (Leaflet, Leaflet draw and other external Libraries). 
 There were 2 geospatial techniques applied using turf which are Euclidian Distance along a road and Finding Nearest neighbour (from the traffic camera cluster). 
