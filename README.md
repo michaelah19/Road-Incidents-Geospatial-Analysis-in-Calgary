@@ -1,5 +1,5 @@
 # Road-Incidents-Geospatial-Analysis-in-Calgary
-The web app is hosted by PythonAnywhere and is available at https://micdean19.pythonanywhere.com/.
+The web app is hosted by PythonAnywhere and is available at [link](http://micdean19geospatialmap.ca:5000/)
 
 Note that due to the limitation of the free hosting tier of Python Anywhere, some of the images won't show due to being too large (i.e. traffic cameras images).
 If you'd like to see those feel free to pull the repository and open the app with python/flask by running "flask run" in the directory.
